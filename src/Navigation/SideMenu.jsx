@@ -15,6 +15,8 @@ import Typography from '@mui/material/Typography';
 import Icon from '@mui/material/Icon'
 import UploadTest from '../Pages/UploadTest/UploadTest';
 import DashboardMain from '../Pages/Dashboard/DashboardMain';
+import ScheduledTestMain from '../Pages/ScheduledTest/ScheduledTestMain';
+import AnnouncementsMain from '../Pages/Announcements/AnnouncementsMain';
 const drawerWidth = 240;
 
 function SideMenu(props) {
@@ -111,7 +113,9 @@ function SideMenu(props) {
       </Box>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-              <UploadTest/>
+              {/* <UploadTest/> */}
+              {/* <AnnouncementsMain /> */}
+              <ScheduledTestMain />
       </Box>
     </Box>
   );

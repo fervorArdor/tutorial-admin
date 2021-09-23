@@ -94,8 +94,8 @@ export default function UplodTest() {
       <h1>{Title}</h1>
         <Tabs value={value} onChange={handleChange} aria-label="uploadtest-handler">
           <Tab label={ <Typography component='subtitle2'>1. Upload Test</Typography> }  {...a11yProps(0)} />
-          <Tab label="2. Verify Test" {...a11yProps(1)} />
-          <Tab label="3. Modify Test" {...a11yProps(2)} />
+          <Tab label="2. Modify Test" {...a11yProps(1)} />
+          <Tab label="3. Verify Test" {...a11yProps(2)} />
           <Tab label="4. Rules" {...a11yProps(3)} />
 
         </Tabs>

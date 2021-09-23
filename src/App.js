@@ -3,7 +3,6 @@ import SideMenu from './Navigation/SideMenu'
 
 import { createTheme ,ThemeProvider} from "@mui/material/styles";
 
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -41,7 +40,6 @@ function App() {
       <SideMenu/>
 
       </ThemeProvider>
-      
     </div>
   );
 }

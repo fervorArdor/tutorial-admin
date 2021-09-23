@@ -1,10 +1,14 @@
 import React from 'react';
+import { Paper, Typography, Box } from '@mui/material'
 
 function VerifyTestComponent(props) {
     return (
-        <div>
-              <h1>VerifyTest</h1>
-        </div>
+        <Paper style={{padding:"20px"}}>
+            <Typography variant='h6'  color='primary' style={{fontWeight: 'bold'}} gutterBottom>
+                Permutation & Combination, Probability, Complex Number
+            </Typography>
+            <Box m={4}/>
+        </Paper>
     );
 }
 

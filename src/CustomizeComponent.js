@@ -18,7 +18,6 @@ export const CustomTextInput = styled(InputBase)(({ theme }) => ({
     fontSize: 16,
     minWdith:350,
     lineHeight:18,
-    minWidth: 350,
     padding: '14px 16px 14px 16px',
     transition: theme.transitions.create([
       'background-color',
