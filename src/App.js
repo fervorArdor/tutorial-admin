@@ -1,34 +1,49 @@
-import * as React from 'react';
+import React from 'react';
+import SideMenu from './Navigation/SideMenu'
+
+import { createTheme ,ThemeProvider} from "@mui/material/styles";
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#005688',
+    },
+    secondary: {
+      main: '#2196f3',
+    },
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      'Poppins',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
 
 
 
-import './App.css'
-import { CustomizeTextInput, GreenButton, WaterMellonButton } from './CustomizeComponent';
-
-import Box from '@mui/material/Box'
-
-import MakeApiRequest from './CustomHooks/MakeApiRequest';
-
-import {checkAuth} from './util/Auth'
-
-export default function App() {
-  
-
-
-
-
-
-
+function App() {
   return (
-    <div>  
-   <Box m={2}>
+    <div>
+      <ThemeProvider theme={theme}>
 
-   <CustomizeTextInput />
-    <WaterMellonButton>Login</WaterMellonButton>
+      <SideMenu/>
 
-
-
-   </Box>
-  </div>
+      </ThemeProvider>
+      
+    </div>
   );
 }
+
+export default App;
