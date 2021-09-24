@@ -72,7 +72,7 @@ function Rules(props) {
                             >
                                 <MenuItem value={1}>Comprehension #1</MenuItem>
                                 <MenuItem value={2}>Default</MenuItem>
-                            </Select>
+                        </Select>
                     </TableCell>
                     <TableCell align="right" style={{minWidth: '190px'}}>
                         From 
