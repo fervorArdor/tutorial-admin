@@ -3,6 +3,17 @@ import { Grid, Typography, Select, MenuItem, InputAdornment, TextField, Box } fr
 import ScheduledTestDataTable from './ScheduledTestDataTable'
 import { GrSearch } from 'react-icons/gr'
 
+function createData(testNumber, test, scheduled) {
+  return { testNumber, test, scheduled };
+}
+
+const rows = [
+  createData('T1', 'Limits', '12 June 2021'),
+  createData('T2', 'Maths', '12 June 2021'),
+  createData('T3', 'Maths', '12 June 2021'),
+  createData('T4', 'Maths', '12 June 2021'),,
+]
+
 const ScheduledTestMain = () => {
     return (
       <div>
