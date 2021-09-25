@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Typography, Grid, Paper, Table, TableContainer, TableBody, TableRow, TableCell, Box } from '@mui/material'
 import Summary from './Summary'
 import ScheduledTestDetails from './ScheduledTestDetails'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 // import Calendar from "react-material-ui-calendar"
 import Calendar from "react-calendar"
 import 'react-calendar/dist/Calendar.css'
@@ -57,7 +58,7 @@ class DashboardMain extends Component {
                                             </Typography>
                                         </TableCell>
                                         <TableCell align="center">
-                                                A
+                                            <MdKeyboardArrowRight />
                                         </TableCell>
                                     </TableRow>
                                 ))}

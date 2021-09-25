@@ -22,7 +22,7 @@ const Summary = () => {
             {summaryData.map((item, index) => (
                 <Grid item xs={4}>
                     <Paper className={classes.paper1}>
-                        <IconButton size="large" color="#E99C1D">
+                        <IconButton size="large" color="inherit" style={{color: '#E99C1D'}}>
                             {item.icon}
                         </IconButton>
                         <Typography variant='subtitle1' color='primary'>{item.total}</Typography>
@@ -43,7 +43,7 @@ const Summary = () => {
             </Grid>
             <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                    <IconButton size="large" color="inherit">
+                    <IconButton size="large" color="inherit" style={{color: '#E99C1D'}}>
                         <AiOutlineFileText />
                     </IconButton>
                     <Typography variant='subtitle2'>Upload Test</Typography>
