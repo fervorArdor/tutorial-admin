@@ -43,7 +43,7 @@ const Summary = () => {
             </Grid>
             <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                    <IconButton size="large" color="inherit" style={{color: '#E99C1D'}}>
+                    <IconButton size="large" color="inherit">
                         <AiOutlineFileText />
                     </IconButton>
                     <Typography variant='subtitle2'>Upload Test</Typography>
