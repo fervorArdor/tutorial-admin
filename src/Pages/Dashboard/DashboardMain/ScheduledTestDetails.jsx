@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Paper, Typography } from '@mui/material'
 import { OutLinedButton } from '../../../CustomizeComponent'
+import useStyles from './styles'
 
 function createData(date, topic, exam, batch) {
     return { date, topic, exam, batch };
@@ -15,16 +16,28 @@ const rows = [
 ];
 
 const ScheduledTestDetails = () => {
+    const classes = useStyles()
+
     return (
         <TableContainer component={Paper}>
             <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center">Date</TableCell>
-                        <TableCell align="center">Topic / SUbject</TableCell>
-                        <TableCell align="center">Exam</TableCell>
-                        <TableCell align="center">Class</TableCell>
-                        <TableCell align="center">Action</TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Date</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Topic / Subject</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Exam</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Class</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Action</Typography>
+                        </TableCell>
                     </TableRow>
                 </TableHead>
 
@@ -35,18 +48,18 @@ const ScheduledTestDetails = () => {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.date}</Typography>
+                            <Typography className={classes.caption}>{row.date}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.topic}</Typography>
+                            <Typography className={classes.caption} color='primary' fontWeight='bold'>{row.topic}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.exam}</Typography>
+                            <Typography className={classes.caption}>{row.exam}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.batch}</Typography>
+                            <Typography className={classes.caption}>{row.batch}</Typography>
                         </TableCell>
-                        <TableCell style={{minWidth: '240px'}} align="center">
+                        <TableCell style={{minWidth: '200px'}} align="center">
                             <OutLinedButton style={{marginRight: '10px'}}>Edit</OutLinedButton>
                             <OutLinedButton>Cancel</OutLinedButton>
                         </TableCell>

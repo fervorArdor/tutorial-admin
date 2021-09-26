@@ -1,46 +1,67 @@
 import React from 'react';
-import { TableContainer, TableHead, TableRow, TableCell, TableBody, Table, Paper, Select, MenuItem, RadioGroup, FormControlLabel, Radio, TextField, Box } from '@mui/material'
+import { TableContainer, TableHead, TableRow, TableCell, TableBody, Table, Paper, Select, MenuItem, TextField, Box, Typography } from '@mui/material'
 import { FilledButton, OutLinedButton } from '../../CustomizeComponent'
-import { AiOutlinePlus } from 'react-icons/ai'
+import AddIcon from '@mui/icons-material/Add'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined'
+import useStyles from './styles'
 
 function Rules(props) {
-    function createData(name, calories, fat, carbs, protein) {
-        return { name, calories, fat, carbs, protein };
+    const classes = useStyles()
+
+    function createData(negMarking, calories, fat, carbs, protein) {
+        return { negMarking, calories, fat, carbs, protein };
     }
 
     const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-        createData('Eclair', 262, 16.0, 24, 6.0),
-        createData('Cupcake', 305, 3.7, 67, 4.3),
-        createData('Gingerbread', 356, 16.0, 49, 3.9),
+        createData('yes', 159, 6.0, 24, 4.0),
+        createData('no', 237, 9.0, 37, 4.3),
+        createData('yes', 262, 16.0, 24, 6.0),
+        createData('yes', 305, 3.7, 67, 4.3),
+        createData('no', 356, 16.0, 49, 3.9),
     ];
 
     return (
         <div>
         <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 850 }} aria-label="simple table">
+            <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>#</TableCell>
-                        <TableCell align="right">Select section</TableCell>
-                        <TableCell align="right">Questions</TableCell>
-                        <TableCell align="right">Marks per question</TableCell>
-                        <TableCell align="right">Nagative Marking</TableCell>
-                        <TableCell align="right">Nagative Marks per question</TableCell>
+                        <TableCell>
+                            <Typography className={classes.caption} color='secondary.light'>#</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Select section</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Questions</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Marks per question</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Negative Marking</Typography>
+                        </TableCell>
+                        <TableCell align="center">
+                            <Typography className={classes.caption} color='secondary.light'>Negative Marks per question</Typography>
+                        </TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell></TableCell>
-                        <TableCell align="right"></TableCell>
-                        <TableCell align="right"></TableCell>
-                        <TableCell align="right">
+                        <TableCell align="center"></TableCell>
+                        <TableCell align="center"></TableCell>
+                        <TableCell align="center">
                             <TextField size='small' />
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="center">
                             <Select
                             value={1}
                             size='small'
                             displayEmpty
+                            IconComponent={() => (
+                                <KeyboardArrowDownIcon color='primary' />
+                            )}
                             inputProps={{ 'aria-label': 'Without label' }}
                             >
                             
@@ -48,7 +69,7 @@ function Rules(props) {
                                 <MenuItem value={2}>Default</MenuItem>
                             </Select>
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="center">
                             <TextField size='small' />
                         </TableCell>
                     </TableRow>
@@ -63,49 +84,69 @@ function Rules(props) {
                     <TableCell component="th" scope="row">
                         {index+1}
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell align="center">
                         <Select
                             value={1}
                             size='small'
                             displayEmpty
+                            IconComponent={() => (
+                                <KeyboardArrowDownIcon color='primary' />
+                            )}
                             inputProps={{ 'aria-label': 'Without label' }}
                             >
-                                <MenuItem value={1}>Comprehension #1</MenuItem>
+                                <MenuItem value={1}>
+                                    <Typography variant='subtitle2'>Comprehension #1</Typography> 
+                                </MenuItem>
                                 <MenuItem value={2}>Default</MenuItem>
                         </Select>
                     </TableCell>
-                    <TableCell align="right" style={{minWidth: '190px'}}>
-                        From 
-                        <Select
-                            value={1}
-                            size='small'
-                            displayEmpty
-                            inputProps={{ 'aria-label': 'Without label' }}
-                            >
-                                <MenuItem value={1}>1</MenuItem>
-                                <MenuItem value={2}>2</MenuItem>
-                        </Select>
-                        To 
-                        <Select
-                            value={1}
-                            size='small'
-                            displayEmpty
-                            inputProps={{ 'aria-label': 'Without label' }}
-                            >
-                                <MenuItem value={1}>3</MenuItem>
-                                <MenuItem value={2}>4</MenuItem>
-                        </Select>
+                    <TableCell align="center" style={{minWidth: '270px'}}>
+                        <div className={classes.displayFlex}>
+                            <Typography variant='subtitle2'>From</Typography>
+                            <Select
+                                value={1}
+                                size='small'
+                                displayEmpty
+                                style={{margin: '0px 10px'}}
+                                IconComponent={() => (
+                                    <KeyboardArrowDownIcon color='primary' />
+                                )}
+                                inputProps={{ 'aria-label': 'Without label' }}
+                                >
+                                    <MenuItem value={1}>
+                                        <Typography variant='subtitle2'>1</Typography> 
+                                    </MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                            </Select>
+                            <Typography variant='subtitle2'>To</Typography>
+                            <Select
+                                value={1}
+                                size='small'
+                                displayEmpty
+                                IconComponent={() => (
+                                    <KeyboardArrowDownIcon color='primary' />
+                                )}
+                                inputProps={{ 'aria-label': 'Without label' }}
+                                >
+                                    <MenuItem value={1}>
+                                        <Typography variant='subtitle2'>3</Typography> 
+                                    </MenuItem>
+                                    <MenuItem value={2}>4</MenuItem>
+                            </Select>
+                        </div>
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell align="center">
                         <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} size='small' />
                     </TableCell>
-                    <TableCell align="right" style={{minWidth: '167px'}}>
-                    <RadioGroup row aria-label="" name="row-radio-buttons-group">
-                        <FormControlLabel value="yes" control={<Radio size='small' />} label="Yes" />
-                        <FormControlLabel value="no" control={<Radio size='small'/>} label="No" />
-                    </RadioGroup>
+                    <TableCell align="center" style={{minWidth: '167px'}}>
+                        <div className={classes.displayFlex}>
+                            {row.negMarking === 'yes' ? <CheckCircleIcon color='primary' /> :  <CircleOutlinedIcon color='primary' /> }
+                            <Typography variant='subtitle2'>Yes</Typography>
+                            {row.negMarking === 'no' ? <CheckCircleIcon color='primary' /> :  <CircleOutlinedIcon color='primary' /> }
+                            <Typography variant='subtitle2'>No</Typography>
+                        </div>
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell align="center">
                         <TextField size='small' />
                     </TableCell>
                     </TableRow>
@@ -113,13 +154,18 @@ function Rules(props) {
                 </TableBody>
             </Table>
             <OutLinedButton style={{margin: '16px'}}>
-                <AiOutlinePlus style={{marginRight: '4px'}} /> Add row
+                <AddIcon style={{marginRight: '4px'}} />
+                <Typography variant='subtitle2'>Add row</Typography> 
             </OutLinedButton>
             <Box m={3} />
         </TableContainer>
 
-        <OutLinedButton style={{margin: '16px'}}>Back</OutLinedButton>
-        <FilledButton style={{margin: '16px'}}>Next</FilledButton>
+        <OutLinedButton style={{margin: '16px'}}>
+            <Typography variant='subtitle2'>Back</Typography> 
+        </OutLinedButton>
+        <FilledButton style={{margin: '16px'}}>
+            <Typography variant='subtitle2'>Next</Typography> 
+        </FilledButton>
         </div>
     );
 }

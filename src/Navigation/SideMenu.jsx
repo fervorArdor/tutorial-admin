@@ -114,10 +114,10 @@ function SideMenu(props) {
       </Box>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-              {/* <DashboardMain /> */}
+              <DashboardMain />
               {/* <UploadTest/> */}
               {/* <ScheduledTestMain /> */}
-              <TestRepositoryMain />
+              {/* <TestRepositoryMain /> */}
               {/* <AnnouncementsMain /> */}
       </Box>
     </Box>

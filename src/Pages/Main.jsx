@@ -1,13 +1,13 @@
 import React from 'react'
 import { Grid, Typography, Select, MenuItem, InputAdornment, TextField, Box } from '@mui/material'
-// import ScheduledTestDataTable from './ScheduledTestDataTable'
 import DataTable from './DataTable'
-import { GrSearch } from 'react-icons/gr'
+import SearchIcon from '@mui/icons-material/Search'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 const Main = ({ rows, pageName }) => {
     return (
       <div>
-        <Typography variant='h6' fontWeight='bold' gutterBottom>
+        <Typography variant='h5' fontWeight='bold' gutterBottom>
             {pageName === 'test_repository' ? 'Test Repository' : 'Scheduled Test'}
         </Typography>
         <Grid container spacing={10}>
@@ -17,10 +17,13 @@ const Main = ({ rows, pageName }) => {
               value={1}
               size='small'
               displayEmpty
+              IconComponent={() => (
+                <KeyboardArrowDownIcon color='primary' style={{marginLeft: '100px'}} />
+              )}
               inputProps={{ 'aria-label': 'Without label' }}
-              >
-                  <MenuItem value={1}>Select</MenuItem>
-                  <MenuItem value={2}>Default</MenuItem>
+            >
+              <MenuItem value={1}>Select</MenuItem>
+              <MenuItem value={2}>Default</MenuItem>
             </Select>
           </Grid>
           <Grid item sm={3}>
@@ -31,7 +34,7 @@ const Main = ({ rows, pageName }) => {
                 label='Test' 
                 InputProps={{
                     endAdornment: <InputAdornment position="end">
-                        <GrSearch />
+                        <SearchIcon color='primary' />
                     </InputAdornment>,
                 }}
             />
@@ -41,6 +44,9 @@ const Main = ({ rows, pageName }) => {
               value={1}
               size='small'
               displayEmpty
+              IconComponent={() => (
+                <KeyboardArrowDownIcon color='primary' />
+              )}
               inputProps={{ 'aria-label': 'Without label' }}
               >
                   <MenuItem value={1}>Recent</MenuItem>
@@ -48,7 +54,7 @@ const Main = ({ rows, pageName }) => {
             </Select>
           </Grid>
         </Grid>
-        <Box m={4} />
+        <Box m={2} />
 
         <DataTable rows={rows} pageName={pageName} />
       </div>

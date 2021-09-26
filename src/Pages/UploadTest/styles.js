@@ -6,4 +6,10 @@ export default makeStyles({
         lineHeight: '19px',
         color: '#5C656A',
     },
+    displayFlex: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '5px',
+    },
 })

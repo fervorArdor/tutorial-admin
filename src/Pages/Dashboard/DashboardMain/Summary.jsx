@@ -21,12 +21,12 @@ const Summary = () => {
         <Grid container>
             {summaryData.map((item, index) => (
                 <Grid item xs={4}>
-                    <Paper className={classes.paper1}>
-                        <IconButton size="large" color="inherit" style={{color: '#E99C1D'}}>
+                    <Paper className={classes.flexColumn}>
+                        <IconButton size="large" fontWeight='light' color="inherit" style={{color: '#E99C1D'}}>
                             {item.icon}
                         </IconButton>
-                        <Typography variant='subtitle1' color='primary'>{item.total}</Typography>
-                        <Typography variant='subtitle1'>{item.title}</Typography>
+                        <Typography className={classes.body1} color='primary' fontWeight='bold'>{item.total}</Typography>
+                        <Typography className={classes.caption}>{item.title}</Typography>
                     </Paper>
                 </Grid>
             ))}
@@ -35,18 +35,18 @@ const Summary = () => {
         <Grid container spacing={2}>
             <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                    <IconButton size="large" color="inherit">
+                    <IconButton size='large' color="inherit">
                         <BsCalendar />
                     </IconButton>
-                    <Typography variant='subtitle2'>Scheduled Test</Typography>
+                    <Typography className={classes.body1}>Scheduled Test</Typography>
                 </Paper>
             </Grid>
             <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                    <IconButton size="large" color="inherit">
+                    <IconButton size='large' color="inherit">
                         <AiOutlineFileText />
                     </IconButton>
-                    <Typography variant='subtitle2'>Upload Test</Typography>
+                    <Typography className={classes.body1}>Upload Test</Typography>
                 </Paper>
             </Grid>
         </Grid>

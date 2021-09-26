@@ -1,37 +1,40 @@
 import React from 'react'
 import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Paper, Typography } from '@mui/material'
-import { OutLinedButton } from '../CustomizeComponent'
+import ModalComponent from './ModalComponent'
+import useStyles from './styles'
 
 const DataTable = ({ rows, pageName }) => {
+    const classes = useStyles()
+
     return (
         <TableContainer component={Paper}>
             <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>
-                            <Typography variant='captio' color='#8A8F93'>#</Typography>
+                            <Typography className={classes.caption} color='#8A8F93'>#</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption' color='#8A8F93'>Date</Typography>
+                            <Typography className={classes.caption} color='#8A8F93'>Date</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption' color='#8A8F93'>Topic / Subject</Typography>
+                            <Typography className={classes.caption} color='#8A8F93'>Topic / Subject</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption' color='#8A8F93'>Exam</Typography>
+                            <Typography className={classes.caption} color='#8A8F93'>Exam</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption' color='#8A8F93'>
+                            <Typography className={classes.caption} color='#8A8F93'>
                                 {pageName === 'test_repository' ? 'Name of the tests' : 'Batch'}
                             </Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption' color='#8A8F93'>
+                            <Typography className={classes.caption} color='#8A8F93'>
                                 {pageName === 'test_repository' ? 'Questions' : 'Completion date'}
                             </Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption' color='#8A8F93'>Action</Typography>
+                            <Typography className={classes.caption} color='#8A8F93'>Action</Typography>
                         </TableCell>
                     </TableRow>
                 </TableHead>
@@ -46,29 +49,30 @@ const DataTable = ({ rows, pageName }) => {
                             {index+1}
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.date}</Typography>
+                            <Typography className={classes.caption}>{row.date}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.topic}</Typography>
+                            <Typography className={classes.caption}>{row.topic}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.exam}</Typography>
+                            <Typography className={classes.caption}>{row.exam}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>{row.batch}</Typography>
+                            <Typography className={classes.caption}>{row.batch}</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography variant='caption'>
+                            <Typography className={classes.caption}>
                                 {pageName === 'test_repository' ? row.questions : row.completion_date }
                             </Typography>
                         </TableCell>
-                        <TableCell style={{minWidth: '260px'}} align="center">
-                            <OutLinedButton style={{marginRight: '10px'}}>
+                        <TableCell style={{minWidth: '240px'}} align="center">
+                            <ModalComponent />
+                            {/* <OutLinedButton style={{marginRight: '10px'}}>
                                 {pageName === 'test_repository' ? 'Schedule Test' : 'Edit'}
                             </OutLinedButton>
                             <OutLinedButton>
                                 {pageName === 'test_repository' ? 'Edit' : 'Cancel'}
-                            </OutLinedButton>
+                            </OutLinedButton> */}
                         </TableCell>
                     </TableRow>
                 ))}
