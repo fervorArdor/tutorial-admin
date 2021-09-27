@@ -13,29 +13,29 @@ const DataTable = ({ rows, pageName }) => {
                 <TableHead>
                     <TableRow>
                         <TableCell>
-                            <Typography className={classes.caption} color='#8A8F93'>#</Typography>
+                            <Typography className={classes.caption} color='secondary.light'>#</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography className={classes.caption} color='#8A8F93'>Date</Typography>
+                            <Typography className={classes.caption} color='secondary.light'>Date</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography className={classes.caption} color='#8A8F93'>Topic / Subject</Typography>
+                            <Typography className={classes.caption} color='secondary.light'>Topic / Subject</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography className={classes.caption} color='#8A8F93'>Exam</Typography>
+                            <Typography className={classes.caption} color='secondary.light'>Exam</Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography className={classes.caption} color='#8A8F93'>
+                            <Typography className={classes.caption} color='secondary.light'>
                                 {pageName === 'test_repository' ? 'Name of the tests' : 'Batch'}
                             </Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography className={classes.caption} color='#8A8F93'>
+                            <Typography className={classes.caption} color='secondary.light'>
                                 {pageName === 'test_repository' ? 'Questions' : 'Completion date'}
                             </Typography>
                         </TableCell>
                         <TableCell align="center">
-                            <Typography className={classes.caption} color='#8A8F93'>Action</Typography>
+                            <Typography className={classes.caption} color='secondary.light'>Action</Typography>
                         </TableCell>
                     </TableRow>
                 </TableHead>
