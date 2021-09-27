@@ -58,7 +58,7 @@ export const FilledButton = styled(Button)(({ theme }) => ({
   borderRadius:5, 
   fontWeight: 600,
   lineHeight:'21px',
-  padding: '6px 16px 14px 6px',
+  padding: '9px 14px 9px 14px',
   color:"white",
   backgroundColor:'#005688',
   '&:hover': {

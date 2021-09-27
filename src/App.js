@@ -35,7 +35,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div>
+    <div style={{ background: '#F8FAFC'}}>
       <ThemeProvider theme={theme}>
 
       <SideMenu/>

@@ -1,6 +1,7 @@
-import React from 'react'
-import { Typography, Box, InputAdornment, Table, TableContainer, Paper, TableHead, TableCell, TableBody, TableRow, TextField, Link } from '@mui/material'
+import React, { useState } from 'react'
+import { Typography, Box, InputAdornment, Table, TableContainer, Paper, TableHead, TableCell, TableBody, TableRow, TextField, Link, Modal } from '@mui/material'
 import { FilledButton } from '../../CustomizeComponent';
+import NewAnnouncement from './NewAnnouncement'
 import SearchIcon from '@mui/icons-material/Search'
 import useStyles from './styles'
 
@@ -18,15 +19,26 @@ const rows = [
 
 const AnnouncementsMain = () => {
     const classes = useStyles()
+    const [open, setOpen] = useState(false)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
 
     return (
         <div>
         <Typography variant='h5' fontWeight='bold'>Announcements</Typography>
         <Box m={2} />
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <FilledButton>
+            <FilledButton onClick={handleOpen}>
                 <Typography variant='subtitle2'>New Announcement</Typography>
             </FilledButton>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <NewAnnouncement handleClose={handleClose} />
+            </Modal>
             <TextField
                 variant='outlined'
                 label='Search' 

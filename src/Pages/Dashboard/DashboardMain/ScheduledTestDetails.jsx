@@ -19,23 +19,23 @@ const ScheduledTestDetails = () => {
     const classes = useStyles()
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} elevation={0}>
             <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption} color='secondary.light'>Date</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption} color='secondary.light'>Topic / Subject</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption} color='secondary.light'>Exam</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption} color='secondary.light'>Class</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption} color='secondary.light'>Action</Typography>
                         </TableCell>
                     </TableRow>
@@ -47,19 +47,19 @@ const ScheduledTestDetails = () => {
                     key={index}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption}>{row.date}</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption} color='primary' fontWeight='bold'>{row.topic}</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption}>{row.exam}</Typography>
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" className={classes.td}>
                             <Typography className={classes.caption}>{row.batch}</Typography>
                         </TableCell>
-                        <TableCell style={{minWidth: '200px'}} align="center">
+                        <TableCell style={{minWidth: '200px'}} align="center" className={classes.td}>
                             <OutLinedButton style={{marginRight: '10px'}}>Edit</OutLinedButton>
                             <OutLinedButton>Cancel</OutLinedButton>
                         </TableCell>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, Box, Button, TextField, InputAdornment } from '@mui/material'
 import { CustomTextInput, FilledButton, OutLinedButton } from '../../CustomizeComponent'
 import SearchIcon from '@mui/icons-material/Search';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
+import FileUploadIcon from '@mui/icons-material/FileUpload'
 
 const style = {
     position: 'absolute',
@@ -16,7 +16,7 @@ const style = {
     p: 4,
 };
 
-const NewAnnouncement = () => {
+const NewAnnouncement = ({ handleClose }) => {
     return (
         <Box sx={style}>
             <Typography variant='h6' color='primary' fontWeight='bold' gutterBottom>
@@ -74,7 +74,7 @@ const NewAnnouncement = () => {
             </label> 
             <Box m={2} />
             <FilledButton style={{marginRight: '10px'}}>Live</FilledButton>
-            <OutLinedButton>Cancel</OutLinedButton>
+            <OutLinedButton onClick={handleClose}>Cancel</OutLinedButton>
         </Box>
     )
 }

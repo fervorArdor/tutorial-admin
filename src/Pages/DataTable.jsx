@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Paper, Typography } from '@mui/material'
-import ModalComponent from './ModalComponent'
+import ModalTestComponent from './TestRepository/ModalTestComponent'
+import ModalComponent from './ScheduledTest/ModalComponent'
 import useStyles from './styles'
 
 const DataTable = ({ rows, pageName }) => {
@@ -66,13 +67,7 @@ const DataTable = ({ rows, pageName }) => {
                             </Typography>
                         </TableCell>
                         <TableCell style={{minWidth: '240px'}} align="center">
-                            <ModalComponent />
-                            {/* <OutLinedButton style={{marginRight: '10px'}}>
-                                {pageName === 'test_repository' ? 'Schedule Test' : 'Edit'}
-                            </OutLinedButton>
-                            <OutLinedButton>
-                                {pageName === 'test_repository' ? 'Edit' : 'Cancel'}
-                            </OutLinedButton> */}
+                            {pageName === 'test_repository' ? <ModalTestComponent /> : <ModalComponent /> }
                         </TableCell>
                     </TableRow>
                 ))}

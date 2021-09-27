@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography, TextField } from '@mui/material'
-import { FilledButton, OutLinedButton, StyledModal } from '../../CustomizeComponent'
+import { FilledButton, OutLinedButton } from '../../CustomizeComponent'
 
 const style = {
     position: 'absolute',
@@ -14,8 +14,7 @@ const style = {
     p: 4,
 }
 
-const CancelTest = () => {
-
+const CancelTest = ({ handleClose }) => {
     return (
         <Box sx={style}>
             <Typography variant='h6' color='primary' fontWeight='bold' gutterBottom>
@@ -40,7 +39,7 @@ const CancelTest = () => {
             </Typography>
             <Box m={3} />
             <FilledButton style={{marginRight: '10px'}}>Send</FilledButton>
-            <OutLinedButton>Cancel</OutLinedButton>
+            <OutLinedButton onClick={handleClose}>Cancel</OutLinedButton>
         </Box>
     )
 }

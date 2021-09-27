@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import { Box, Typography, TextField, Select, MenuItem, InputAdornment, Stack, Chip } from '@mui/material'
 import { OutLinedButton, FilledButton } from '../../CustomizeComponent'
 import SearchIcon from '@mui/icons-material/Search';
-import CancelIcon from '@mui/icons-material/Cancel';
+import CancelIcon from '@mui/icons-material/Cancel'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import AdapterDateFns from '@mui/lab/AdapterDateFns'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import DesktopDatePicker from '@mui/lab/DesktopDatePicker'
+import useStyles from './styles'
 
 const style = {
     position: 'absolute',
@@ -15,15 +19,19 @@ const style = {
     boxShadow: 24,
     borderRadius: '8px',
     p: 4,
-};
+}
 
-const EditScheduledTest = () => {
-    const [edit, setEdit] = useState(true)
+const EditOrScheduledTest = ({ edit, handleClose }) => {
+    const [value, setValue] = useState(new Date('2021-09-27T21:11:54'))
+    const classes = useStyles()
 
+    const handleChange = (newValue) => {
+        setValue(newValue);
+    }
     return (
         <Box sx={style}>
             <Typography variant="h6" fontWeight='bold' color='primary'>
-                {edit ? 'Edit Scheduled Test' : 'Scheduled Test'}
+                {edit === 'yes' ? 'Edit Scheduled Test' : 'Scheduled Test'}
             </Typography>
             <Box m={2} />
             <Box  sx={{ mb: 1 }}>
@@ -95,13 +103,41 @@ const EditScheduledTest = () => {
                     />
                 ))}
             </Stack>
-            <Box m={4} />
+            <Box m={2} />
+
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <div className={classes.displayFlex}>
+                    <div>
+                        <Typography variant="subtitle1" fontWeight='bold' color='primary'>
+                            Date for the test
+                        </Typography>
+                        <DesktopDatePicker
+                            inputFormat="MM/dd/yyyy"
+                            value={value}
+                            onChange={handleChange}
+                            renderInput={(params) => <TextField size='small' {...params} />}
+                        />
+                    </div>
+                    <div>
+                        <Typography variant="subtitle1" fontWeight='bold' color='primary'>
+                            Set Completion date
+                        </Typography>
+                        <DesktopDatePicker
+                            inputFormat="MM/dd/yyyy"
+                            value={value}
+                            onChange={handleChange}
+                            renderInput={(params) => <TextField size='small' {...params} />}
+                        />
+                    </div>
+                </div>
+            </LocalizationProvider>
+
             <FilledButton style={{marginRight: '10px'}}>
-                {edit ? 'Update' : 'Scheduled Test'}
+                {edit === 'yes' ? 'Update' : 'Scheduled Test'}
             </FilledButton>
-            <OutLinedButton>Cancel</OutLinedButton>
+            <OutLinedButton onClick={handleClose}>Cancel</OutLinedButton>
         </Box>
     )
 }
 
-export default EditScheduledTest
+export default EditOrScheduledTest
