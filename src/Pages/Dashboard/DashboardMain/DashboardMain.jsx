@@ -26,7 +26,6 @@ const DashboardMain = () => {
                 </Grid>
                 <Box sx={{flexGrow: 1}} />
                 <Grid item xs={3}>
-                    {/* <Typography variant='subtitle1' color='primary' fontWeight='bold'>Upcoming Tests</Typography> */}
                     <UpcomingTests />
                 </Grid>
             </Grid>

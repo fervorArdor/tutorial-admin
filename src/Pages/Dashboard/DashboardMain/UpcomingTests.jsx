@@ -19,7 +19,7 @@ const UpcomingTests = () => {
     const classes = useStyles()
 
     return (
-        <TableContainer sx={{width: 250}} component={Paper}>
+        <TableContainer sx={{width: 300}} component={Paper}>
             <Typography variant='subtitle1' color='primary' fontWeight='bold' style={{padding: '20px'}}>Upcoming Tests</Typography>
             <Table aria-label="simple table">
                 <TableBody>
@@ -28,7 +28,7 @@ const UpcomingTests = () => {
                     key={index}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                        <TableCell component="th" scope="row">
+                        <TableCell component="th" scope="row" style={{paddingLeft: '25px'}}>
                             <Typography fontWeight='bold' variant='subtitle2'>{row.testNumber}</Typography>
                         </TableCell>
                         <TableCell align="left">

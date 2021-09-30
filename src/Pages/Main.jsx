@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Typography, Select, MenuItem, InputAdornment, TextField, Box } from '@mui/material'
-import DataTable from './DataTable'
+import TestRepositoryTable from './TestRepository/TestRepositoryTable'
+import ScheduledTestTable from './ScheduledTest/ScheduledTestTable'
 import SearchIcon from '@mui/icons-material/Search'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
@@ -57,7 +58,7 @@ const Main = ({ rows, pageName }) => {
         </Grid>
         <Box m={2} />
 
-        <DataTable rows={rows} pageName={pageName} />
+        {pageName === 'test_repository' ? <TestRepositoryTable rows={rows} /> :  <ScheduledTestTable rows={rows} />}
       </div>
     )
 }

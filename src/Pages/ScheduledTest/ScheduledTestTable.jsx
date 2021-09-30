@@ -1,10 +1,9 @@
 import React from 'react'
 import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Paper, Typography } from '@mui/material'
-import ModalTestComponent from './TestRepository/ModalTestComponent'
-import ModalComponent from './ScheduledTest/ModalComponent'
+import ModalComponent from './ModalComponent'
 import useStyles from './styles'
 
-const DataTable = ({ rows, pageName }) => {
+const ScheduledTestTable = ({ rows }) => {
     const classes = useStyles()
 
     return (
@@ -26,12 +25,12 @@ const DataTable = ({ rows, pageName }) => {
                         </TableCell>
                         <TableCell align="center">
                             <Typography className={classes.caption} color='secondary.light'>
-                                {pageName === 'test_repository' ? 'Name of the tests' : 'Batch'}
+                                Batch
                             </Typography>
                         </TableCell>
                         <TableCell align="center">
                             <Typography className={classes.caption} color='secondary.light'>
-                                {pageName === 'test_repository' ? 'Questions' : 'Completion date'}
+                                Completion date
                             </Typography>
                         </TableCell>
                         <TableCell align="center">
@@ -63,11 +62,11 @@ const DataTable = ({ rows, pageName }) => {
                         </TableCell>
                         <TableCell align="center">
                             <Typography className={classes.caption}>
-                                {pageName === 'test_repository' ? row.questions : row.completion_date }
+                                {row.completion_date}
                             </Typography>
                         </TableCell>
                         <TableCell style={{minWidth: '240px'}} align="center">
-                            {pageName === 'test_repository' ? <ModalTestComponent /> : <ModalComponent /> }
+                            <ModalComponent />
                         </TableCell>
                     </TableRow>
                 ))}
@@ -77,4 +76,4 @@ const DataTable = ({ rows, pageName }) => {
     )
 }
 
-export default DataTable
+export default ScheduledTestTable

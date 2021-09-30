@@ -114,6 +114,7 @@ const EditOrScheduledTest = ({ edit, handleClose }) => {
                             inputFormat="MM/dd/yyyy"
                             value={value}
                             onChange={handleChange}
+                            InputProps={{ className: classes.input }}
                             renderInput={(params) => <TextField size='small' {...params} />}
                         />
                     </div>
@@ -125,6 +126,7 @@ const EditOrScheduledTest = ({ edit, handleClose }) => {
                             inputFormat="MM/dd/yyyy"
                             value={value}
                             onChange={handleChange}
+                            InputProps={{ className: classes.input }}
                             renderInput={(params) => <TextField size='small' {...params} />}
                         />
                     </div>
