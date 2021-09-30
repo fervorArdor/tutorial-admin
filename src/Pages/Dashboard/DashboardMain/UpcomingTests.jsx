@@ -20,6 +20,7 @@ const UpcomingTests = () => {
 
     return (
         <TableContainer sx={{width: 250}} component={Paper}>
+            <Typography variant='subtitle1' color='primary' fontWeight='bold' style={{padding: '20px'}}>Upcoming Tests</Typography>
             <Table aria-label="simple table">
                 <TableBody>
                 {rows.map((row, index) => (

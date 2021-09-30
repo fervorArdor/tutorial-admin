@@ -1,6 +1,6 @@
 import React from 'react';
 import { TableContainer, TableHead, TableRow, TableCell, TableBody, Table, Paper, Select, MenuItem, TextField, Box, Typography } from '@mui/material'
-import { FilledButton, OutLinedButton } from '../../CustomizeComponent'
+import { OutLinedButton } from '../../CustomizeComponent'
 import AddIcon from '@mui/icons-material/Add'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
@@ -60,7 +60,7 @@ function Rules(props) {
                             size='small'
                             displayEmpty
                             IconComponent={() => (
-                                <KeyboardArrowDownIcon color='primary' />
+                                <KeyboardArrowDownIcon color='primary' style={{paddingRight: '8px'}} />
                             )}
                             inputProps={{ 'aria-label': 'Without label' }}
                             >
@@ -90,7 +90,7 @@ function Rules(props) {
                             size='small'
                             displayEmpty
                             IconComponent={() => (
-                                <KeyboardArrowDownIcon color='primary' />
+                                <KeyboardArrowDownIcon color='primary' style={{paddingRight: '8px'}} />
                             )}
                             inputProps={{ 'aria-label': 'Without label' }}
                             >
@@ -109,7 +109,7 @@ function Rules(props) {
                                 displayEmpty
                                 style={{margin: '0px 10px'}}
                                 IconComponent={() => (
-                                    <KeyboardArrowDownIcon color='primary' />
+                                    <KeyboardArrowDownIcon color='primary' style={{paddingRight: '8px'}}/>
                                 )}
                                 inputProps={{ 'aria-label': 'Without label' }}
                                 >
@@ -124,7 +124,7 @@ function Rules(props) {
                                 size='small'
                                 displayEmpty
                                 IconComponent={() => (
-                                    <KeyboardArrowDownIcon color='primary' />
+                                    <KeyboardArrowDownIcon color='primary' style={{paddingRight: '8px'}}/>
                                 )}
                                 inputProps={{ 'aria-label': 'Without label' }}
                                 >
@@ -159,13 +159,6 @@ function Rules(props) {
             </OutLinedButton>
             <Box m={3} />
         </TableContainer>
-
-        <OutLinedButton style={{margin: '16px'}}>
-            <Typography variant='subtitle2'>Back</Typography> 
-        </OutLinedButton>
-        <FilledButton style={{margin: '16px'}}>
-            <Typography variant='subtitle2'>Next</Typography> 
-        </FilledButton>
         </div>
     );
 }

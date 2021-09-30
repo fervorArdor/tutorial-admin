@@ -69,8 +69,8 @@ const AnnouncementsMain = () => {
                     key={row.date}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                    <TableCell component="th" color='primary' scope="row">
-                    <Link href="#" underline="always" className={classes.caption}>
+                    <TableCell component="th" scope="row">
+                    <Link href="#" underline="always" color='primary' className={classes.caption}>
                         {row.announcements}
                     </Link>
                     </TableCell>

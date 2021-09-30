@@ -4,11 +4,11 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
+import { FilledButton, OutLinedButton } from '../../CustomizeComponent'
 
 import UploadTestComponent from './UploadTestComponent';
-import ModifyTestComponent from './ModifyTestComponent';
-import VerifyTestComponent from './VerifyTestComponent';
+import ModifyTestComponent from './ModifyTest/ModifyTestComponent';
+import VerifyTestComponent from './VerifyTest/VerifyTestComponent';
 import Rules from './Rules';
 
 
@@ -88,32 +88,33 @@ export default function UplodTest() {
   return (
         <>
 
-<Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%' }}>
+          <Box sx={{ border: 1, borderColor: 'divider' }}>
+          <h1>{Title}</h1>
+            <Tabs value={value} onChange={handleChange} aria-label="uploadtest-handler">
+              <Tab label={ <Typography component='subtitle2'>1. Upload Test</Typography> }  {...a11yProps(0)} />
+              <Tab label="2. Modify Test" {...a11yProps(1)} />
+              <Tab label="3. Verify Test" {...a11yProps(2)} />
+              <Tab label="4. Rules" {...a11yProps(3)} />
 
-      <Box sx={{ border: 1, borderColor: 'divider' }}>
-      <h1>{Title}</h1>
-        <Tabs value={value} onChange={handleChange} aria-label="uploadtest-handler">
-          <Tab label={ <Typography component='subtitle2'>1. Upload Test</Typography> }  {...a11yProps(0)} />
-          <Tab label="2. Modify Test" {...a11yProps(1)} />
-          <Tab label="3. Verify Test" {...a11yProps(2)} />
-          <Tab label="4. Rules" {...a11yProps(3)} />
-
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-        <UploadTestComponent/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <ModifyTestComponent/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <VerifyTestComponent/>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-       <Rules/>
-      </TabPanel>
-    </Box>
+            </Tabs>
+          </Box>
+          <TabPanel value={value} index={0}>
+            <UploadTestComponent/>
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <ModifyTestComponent/>
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <VerifyTestComponent/>
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+          <Rules/>
+          </TabPanel>
+        </Box>
  
+      <OutLinedButton style={{margin: '0px 20px'}}>Back</OutLinedButton>
+      <FilledButton>Next</FilledButton>
         </>
 
     );

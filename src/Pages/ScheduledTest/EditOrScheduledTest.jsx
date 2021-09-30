@@ -5,8 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CancelIcon from '@mui/icons-material/Cancel'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import AdapterDateFns from '@mui/lab/AdapterDateFns'
-import LocalizationProvider from '@mui/lab/LocalizationProvider'
-import DesktopDatePicker from '@mui/lab/DesktopDatePicker'
+import { LocalizationProvider, DesktopDatePicker }  from '@mui/lab'
 import useStyles from './styles'
 
 const style = {
@@ -108,7 +107,7 @@ const EditOrScheduledTest = ({ edit, handleClose }) => {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <div className={classes.displayFlex}>
                     <div>
-                        <Typography variant="subtitle1" fontWeight='bold' color='primary'>
+                        <Typography variant="subtitle2" fontWeight='bold' color='primary'>
                             Date for the test
                         </Typography>
                         <DesktopDatePicker
@@ -119,7 +118,7 @@ const EditOrScheduledTest = ({ edit, handleClose }) => {
                         />
                     </div>
                     <div>
-                        <Typography variant="subtitle1" fontWeight='bold' color='primary'>
+                        <Typography variant="subtitle2" fontWeight='bold' color='primary'>
                             Set Completion date
                         </Typography>
                         <DesktopDatePicker

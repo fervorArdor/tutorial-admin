@@ -7,9 +7,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 const Main = ({ rows, pageName }) => {
     return (
       <div>
-        <Typography variant='h5' fontWeight='bold' gutterBottom>
+        <Typography variant='h5' fontWeight='bolder' gutterBottom>
             {pageName === 'test_repository' ? 'Test Repository' : 'Scheduled Test'}
         </Typography>
+        <Box m={3} />
         <Grid container spacing={10}>
           <Grid item xs={3}>
             <Typography variant='subtitle2' color='primary' fontWeight='bold'>Exam type</Typography>

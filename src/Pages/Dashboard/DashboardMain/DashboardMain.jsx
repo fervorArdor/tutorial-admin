@@ -2,10 +2,8 @@ import React from 'react';
 import { Typography, Grid, Box } from '@mui/material'
 import Summary from './Summary'
 import ScheduledTestDetails from './ScheduledTestDetails'
+import Calendar from './Calendar'
 import UpcomingTests from './UpcomingTests'
-// import Calendar from "react-material-ui-calendar"
-import Calendar from "react-calendar"
-import 'react-calendar/dist/Calendar.css'
   
 const DashboardMain = () => {
     return (
@@ -28,7 +26,7 @@ const DashboardMain = () => {
                 </Grid>
                 <Box sx={{flexGrow: 1}} />
                 <Grid item xs={3}>
-                    <Typography variant='subtitle1' color='primary' fontWeight='bold'>Upcoming Tests</Typography>
+                    {/* <Typography variant='subtitle1' color='primary' fontWeight='bold'>Upcoming Tests</Typography> */}
                     <UpcomingTests />
                 </Grid>
             </Grid>
