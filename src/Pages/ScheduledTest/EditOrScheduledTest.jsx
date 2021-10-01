@@ -105,7 +105,7 @@ const EditOrScheduledTest = ({ edit, handleClose }) => {
             <Box m={2} />
 
             <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <div className={classes.displayFlex}>
+                <div className={classes.displayFlex} style={{width: '300px'}}>
                     <div>
                         <Typography variant="subtitle2" fontWeight='bold' color='primary'>
                             Date for the test
