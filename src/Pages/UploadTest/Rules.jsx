@@ -1,26 +1,31 @@
-import React from 'react';
-import { TableContainer, TableHead, TableRow, TableCell, TableBody, Table, Paper, Select, MenuItem, TextField, Box, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react';
+import { TableContainer, TableHead, TableRow, TableCell, TableBody, Table, Paper, Select, MenuItem, TextField, Box, Typography, Radio } from '@mui/material'
 import { OutLinedButton } from '../../CustomizeComponent'
 import AddIcon from '@mui/icons-material/Add'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined'
 import useStyles from './styles'
 
 function Rules(props) {
     const classes = useStyles()
 
-    function createData(negMarking, calories, fat, carbs, protein) {
-        return { negMarking, calories, fat, carbs, protein };
+    function createData(id, negMarking, calories, fat, carbs, protein) {
+        return { id, negMarking, calories, fat, carbs, protein };
     }
-
+    
     const rows = [
-        createData('yes', 159, 6.0, 24, 4.0),
-        createData('no', 237, 9.0, 37, 4.3),
-        createData('yes', 262, 16.0, 24, 6.0),
-        createData('yes', 305, 3.7, 67, 4.3),
-        createData('no', 356, 16.0, 49, 3.9),
+        createData(1, 'yes', 159, 6.0, 24, 4.0),
+        createData(2, 'no', 237, 9.0, 37, 4.3),
+        createData(3, 'yes', 262, 16.0, 24, 6.0),
+        createData(4, 'yes', 305, 3.7, 67, 4.3),
+        createData(5, 'no', 356, 16.0, 49, 3.9),
     ];
+
+    const [selectedValue, setSelectedValue] = useState(null)
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    }    
 
     return (
         <div>
@@ -139,11 +144,25 @@ function Rules(props) {
                         <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} size='small' />
                     </TableCell>
                     <TableCell align="center" style={{minWidth: '167px'}}>
-                        <div className={classes.displayFlex}>
-                            {row.negMarking === 'yes' ? <CheckCircleIcon color='primary' /> :  <CircleOutlinedIcon color='primary' /> }
-                            <Typography variant='subtitle2'>Yes</Typography>
-                            {row.negMarking === 'no' ? <CheckCircleIcon color='primary' /> :  <CircleOutlinedIcon color='primary' /> }
-                            <Typography variant='subtitle2'>No</Typography>
+                        <div className={classes.displayFlex}> 
+                            <Radio
+                                checked={selectedValue == row.id}
+                                onChange={handleChange}
+                                value={row.id}
+                                name="radio-buttons"
+                                checkedIcon={<CheckCircleIcon />}
+                                inputProps={{ 'aria-label': 'A' }}
+                            />
+                            <Typography className={classes.caption} color='secondary.light'>Yes</Typography>
+                            <Radio
+                                checked={selectedValue == row.id+99}
+                                onChange={handleChange}
+                                value={row.id+99}
+                                name="radio-buttons"
+                                checkedIcon={<CheckCircleIcon />}
+                                inputProps={{ 'aria-label': 'B' }}
+                            />
+                            <Typography className={classes.caption} color='secondary.light'>No</Typography>
                         </div>
                     </TableCell>
                     <TableCell align="center">
